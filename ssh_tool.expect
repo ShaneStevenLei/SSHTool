@@ -1,0 +1,17 @@
+#!/usr/bin/expect
+
+# 设置超时时间
+set timeout 10
+# 读取用户名
+set user [lindex $argv 0]
+# 读取端口号
+set port [lindex $argv 1]
+# 读取远程地址
+set host [lindex $argv 2]
+# 读取验证码
+set v_code [lindex $argv 3]
+#执行操作
+spawn ssh -l$user -p$port $host
+expect "Verification code:"
+send "$v_code\n"
+interact
