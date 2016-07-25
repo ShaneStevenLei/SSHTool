@@ -5,19 +5,19 @@ user=''
 port=''
 host=''
 
-if [ `which ssh` == '' ]
+if [[ `which ssh` == '' ]]
 then
    echo '请先安装SSH'
    exit
 fi
 
-if [ `which expect` == '' ]
+if [[ `which expect` == '' ]]
 then
    echo '请先安装expect'
    exit
 fi
 
-if [ `which oathtool` == '' ]
+if [[ `which oathtool` == '' ]]
 then
    echo '请先安装oathtool'
    echo 'Linux, dpkg-based(Ubuntu): sudo apt-get install oathtool'
