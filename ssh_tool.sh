@@ -11,7 +11,7 @@ then
 			echo 'user=' >> ${exe_path}/ssh_tool.config
 			echo 'port=' >> ${exe_path}/ssh_tool.config
 			echo 'host=' >> ${exe_path}/ssh_tool.config
-			echo '创建完成，请修改配置文件${exe_path}/ssh_tool.config'
+			echo "创建完成，请修改配置文件${exe_path}/ssh_tool.config"
 			exit
 			;;
 		'N'|'n')
