@@ -16,12 +16,16 @@ Linux, rpm-based
 `yum install oathtool`
 
 ## 配置
-编辑ssh_tool.sh文件
+创建ssh_tool.config并写入以下配置
 ```
-key='' # Google二次验证的秘钥
-user='' # 用户名
-port='' # 端口号
-host='' # 远程地址
+# Google二次验证的秘钥
+key=
+# 用户名
+user=
+# 端口号
+port=
+# 远程地址
+host=
 ```
 
 ## 使用
