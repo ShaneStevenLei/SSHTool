@@ -74,5 +74,22 @@ then
    exit
 fi
 
-v_code=`oathtool --totp -b -d 6 $key`
-expect ${exe_path}/ssh_tool.expect $user $port $host $v_code
+cat << EOF
+----------------------------------
+    1. jump to $host
+    2. generate auth key
+----------------------------------
+EOF
+read -p 'Please input your choose:' -n 1 -t 10 -e choose
+case $choose in
+	1)
+		v_code=`oathtool --totp -b -d 6 $key`
+		expect ${exe_path}/ssh_tool.expect $user $port $host $v_code
+		;;
+	2)
+		oathtool --totp -b -d 6 $key
+		;;
+	*)
+		echo 'Error input!'
+		;;
+esac
