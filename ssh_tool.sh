@@ -4,7 +4,7 @@ exe_path=$(cd "$(dirname "$0")"; pwd)
 
 if [[ ! -f ${exe_path}/ssh_tool.config ]]
 then
-	read -p "配置文件${exe_path}/ssh_tool.config不存在,是否创建(Y/N)" -s create_config
+	read -p "配置文件${exe_path}/ssh_tool.config不存在,是否创建(Y/N)" create_config
 	case ${create_config} in
 		'Y'|'y')
 			echo 'key=' >> ${exe_path}/ssh_tool.config
