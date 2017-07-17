@@ -87,7 +87,13 @@ case $choose in
 		expect ${exe_path}/ssh_tool.expect $user $port $host $v_code
 		;;
 	2)
-		oathtool --totp -b -d 6 $key
+		v_code=`oathtool --totp -b -d 6 $key`
+		if [[ `uname -s` == 'Darwin' ]]; then
+			echo $v_code | pbcopy
+			echo "$v_code 已复制"
+		else
+			echo $v_code
+		fi
 		;;
 	*)
 		echo 'Error input!'
