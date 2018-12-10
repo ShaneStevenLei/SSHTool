@@ -12,6 +12,6 @@ set host [lindex $argv 2]
 set v_code [lindex $argv 3]
 #执行操作
 spawn ssh -l$user -p$port $host
-expect "Verification code:"
+expect "*MFA auth*"
 send "$v_code\n"
 interact
